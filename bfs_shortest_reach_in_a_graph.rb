@@ -1,5 +1,7 @@
 =begin
 
+Source: HackerRank (Cracking The Coding Interview module)
+
 For a series of undirected graphs, with all edges weighted 6, find and print the shortest distance from a given starting node to every other node.  If there is no path to a node, distance is -1.
 
 Each graph is specified in a "query".
