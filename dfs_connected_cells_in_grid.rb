@@ -1,3 +1,8 @@
+# Source: HackerRank (Cracking The Coding Interview - Algorithms module)
+# In an n x m grid of 0's and 1's, find the largest region of connected 1's,
+# where two cells are connected if they are adjacent horizontally, vertically,
+# or diagonally.  See accompanying .png for more info.
+
 n = gets.strip.to_i
 m = gets.strip.to_i
 grid = Array.new(n)
