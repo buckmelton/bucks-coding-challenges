@@ -1,4 +1,4 @@
-# Randomly shuffly the letters of a string into a new word.
+# Randomly shuffle the letters of a string into a new word.
 def string_shuffle(s)
   s.split('').shuffle.join
 end
