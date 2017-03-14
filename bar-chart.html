@@ -1,0 +1,28 @@
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous">
+  </script>
+  <script>
+    var myText = "foo";
+    var myData = [
+      [1,10],
+      [2,20],
+      [3,15],
+      [4,30],
+      [5,25]
+    ];
+    $(document).ready(function(event) {
+      var buck = $("#buck");
+      console.log(buck);
+      $("#buck").text(myText);
+      console.log(myText);
+    });
+  </script>
+</head>
+<body>
+  <p id="buck">Hello</p>
+</body>
+</html>
