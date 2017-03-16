@@ -34,6 +34,11 @@ Bar charts with 5 bars with widths: 10, 20, 15, 50, and 40.
     ];
     $(document).ready(function(event) {
       var buck = $("#buck");
+      buck.append("<p>Dynamically Created Bar Chart for Values:<br/>");
+      for (var i=0; i<myData.length; i++) {
+        buck.append(myData[i][0] + ": " + myData[i][1] + "&nbsp;&nbsp;&nbsp;");
+      }
+      buck.append("</p><br/>");
       var bar = "";
       for (var i=0; i<myData.length; i++) {
         bar = '<div style="width: ' + (myData[i][1]).toString() + '0px">' + (myData[i][1]).toString() + '</div>';
