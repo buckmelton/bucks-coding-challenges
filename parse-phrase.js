@@ -17,5 +17,34 @@ Create array
   For each key in object
     Create an object of form {"char":"<char>", "count":"<count"}
       and push the object onto the array
-  
+
 */
+
+function parsePhrase(str) {
+
+  // Case-insensitive
+  str = str.toLowerCase();
+
+  // Create object to act as hash for characters.
+  charFreqs = {};
+
+  // Go through each character and count up frequencies.
+  for (var i=0; i<str.length; i++) {
+    if (str[i] in charFreqs) {
+      charFreqs[str[i]]++;
+    } else {
+      charFreqs[str[i]] = 1;
+    }
+  }
+
+  console.log(charFreqs);
+
+  // Convert frequency object into specified array of objects.
+
+}
+
+/*
+Driver code to test.
+*/
+
+console.log(parsePhrase("Sally sells seashells down by the seashore."));
