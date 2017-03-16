@@ -6,32 +6,43 @@ Example:
 Input:
 [[1,10],[2,20],[3,15],[4,50],[5,40]]
 Output:
-Bar charts with 5 bars with heights 10, 20, 15, 50, and 40.
+Bar charts with 5 bars with widths: 10, 20, 15, 50, and 40.
 -->
 <head>
+  <style>
+    div {
+      font: 10px sans-serif;
+      background-color: steelblue;
+      text-align: right;
+      padding: 3px;
+      margin: 1px;
+      color: white;
+    }
+  </style>
   <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous">
   </script>
   <script>
-    var myText = "foo";
     var myData = [
       [1,10],
       [2,20],
       [3,15],
-      [4,30],
-      [5,25]
+      [4,50],
+      [5,40]
     ];
     $(document).ready(function(event) {
       var buck = $("#buck");
-      console.log(buck);
-      $("#buck").text(myText);
-      console.log(myText);
+      var bar = "";
+      for (var i=0; i<myData.length; i++) {
+        bar = '<div style="width: ' + (myData[i][1]).toString() + '0px">' + (myData[i][1]).toString() + '</div>';
+        buck.append(bar);
+      }
     });
   </script>
 </head>
 <body>
-  <p id="buck">Hello</p>
+  <p id="buck"></p>
 </body>
 </html>
