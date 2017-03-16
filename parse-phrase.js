@@ -26,7 +26,7 @@ function parsePhrase(str) {
   str = str.toLowerCase();
 
   // Create object to act as hash for characters.
-  charFreqs = {};
+  var charFreqs = {};
 
   // Go through each character and count up frequencies.
   for (var i=0; i<str.length; i++) {
@@ -37,9 +37,16 @@ function parsePhrase(str) {
     }
   }
 
-  console.log(charFreqs);
-
   // Convert frequency object into specified array of objects.
+  var freqArray = [];
+  for (var char in charFreqs) {
+    var elem = {};
+    elem.char = char;
+    elem.count = (charFreqs[char]).toString();
+    freqArray.push(elem);
+  }
+
+  return freqArray;
 
 }
 
