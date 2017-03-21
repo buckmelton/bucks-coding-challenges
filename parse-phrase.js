@@ -46,6 +46,7 @@ function parsePhrase(str) {
     freqArray.push(elem);
   }
 
+  // We're done!  Return.
   return freqArray;
 
 }
