@@ -22,7 +22,7 @@ Create array
 
 function parsePhrase(str) {
 
-  // Case-insensitive
+  // We're counting in a case-insensitive manner
   str = str.toLowerCase();
 
   // Create object to act as hash for characters.
