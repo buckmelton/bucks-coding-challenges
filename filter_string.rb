@@ -8,7 +8,7 @@ another string called filter.
 require "test/unit"
 
 def filter_string(str, filter)
-  return str.split("").delete_if{|ch| filter.split("").include?(ch)}.join
+  return str.split("").delete_if{|ch| filter.downcase.split("").include?(ch.downcase)}.join
 end
 
 class TestFilterString < Test::Unit::TestCase
@@ -23,6 +23,14 @@ class TestFilterString < Test::Unit::TestCase
 
   def test_two_char
     assert_equal(filter_string("buck", "bu"), "ck")
+  end
+
+  def test_random_char
+    assert_equal(filter_string("random string", "rnm"), "ado stig")
+  end
+
+  def test_case_insensitive
+    assert_equal(filter_string("RaNdOm StRiNg", "rnm"), "adO Stig")
   end
 
 end
