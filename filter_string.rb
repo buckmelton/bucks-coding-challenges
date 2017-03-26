@@ -5,12 +5,47 @@ another string called filter.
 
 =end
 
-require "test/unit"
+require "rspec/autorun"
 
 def filter_string(str, filter)
   return str.split("").delete_if{|ch| filter.downcase.split("").include?(ch.downcase)}.join
 end
 
+RSpec.describe "filter_string" do
+
+  context "filter doesn't contain any characters in string" do
+    it "leaves string unchanged" do
+      expect(filter_string("foo", "b")).to eq("foo")
+    end
+  end
+
+  context "filter is one character that is present in string" do
+    it "removes filter char from string" do
+      expect(filter_string("foo", "f")).to eq("oo")
+    end
+  end
+
+  context "filter is two chars present contiguously in same order in string" do
+    it "removes the two chars from string" do
+      expect(filter_string("Buck", "ck")).to eq("Bu")
+    end
+  end
+
+  context "filter contains multiple characters randomly present in string one or multiple times" do
+    it "removes all instances of all filter chars from string" do
+      expect(filter_string("random string", "mnqr")).to eq("ado stig")
+    end
+  end
+
+  context "filter contains lowercase characters whose uppercase equivalents are in string" do
+    it "removes filter characters from string regardless of case" do
+      expect(filter_string("RaNdOm StRiNg", "rnqm")).to eq("adO Stig")
+    end
+  end
+
+end
+
+=begin
 class TestFilterString < Test::Unit::TestCase
 
   def test_disjoint
@@ -34,3 +69,4 @@ class TestFilterString < Test::Unit::TestCase
   end
 
 end
+=end
