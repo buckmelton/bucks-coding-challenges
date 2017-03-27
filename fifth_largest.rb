@@ -54,4 +54,16 @@ RSpec.describe "fifth_largest:" do
     end
   end
 
+  context "array is all negative ints:" do
+    it "returns the fifth largest element" do
+      expect(fifth_largest([-10,-8,-12,-6,-4,-20])).to eq(-12)
+    end
+  end
+
+  context "array contains mix of positive and negative integers:" do
+    it "returns the fifth largest element" do
+      expect(fifth_largest([-1,1,-3,4,-6,8])).to eq(-3)
+    end
+  end
+
 end
